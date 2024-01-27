@@ -1,0 +1,9 @@
+[package]
+name = "heapless-issue-450"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+heapless = { version = "0.8.0", features = ["serde"] }
+serde = { version = "1.0.196", features = ["derive"] }
+serde-json-core = { git = "https://github.com/rust-embedded-community/serde-json-core", rev = "9327a14e74ad3b4fd37a9ac34e72b61aa5fcc9bf" }
