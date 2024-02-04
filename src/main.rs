@@ -10,7 +10,10 @@ fn main() {
         msg_random_num: 123456,
     };
 
-    let jsonstr: heapless::String<32> = serde_json_core::to_string(&node_msg_example).unwrap();
+    let json_heapless: heapless::String<32> =
+        serde_json_core::to_string(&node_msg_example).unwrap();
 
-    println!("json: {jsonstr}");
+    let json_str: &str = json_heapless.as_str();
+
+    let value = zenoh::value::Value::from(json_str);
 }
